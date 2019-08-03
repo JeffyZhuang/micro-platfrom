@@ -28,10 +28,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ApiResult globalException(HttpServletRequest request, Throwable ex) {
-        return new ApiResult(getStaus(request).value(), ex.getMessage(), null);
+        return new ApiResult(getStatus(request).value(), ex.getMessage(), null);
     }
 
-    private HttpStatus getStaus(HttpServletRequest request) {
+    private HttpStatus getStatus(HttpServletRequest request) {
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         if (statusCode == null) {
             return HttpStatus.INTERNAL_SERVER_ERROR;
