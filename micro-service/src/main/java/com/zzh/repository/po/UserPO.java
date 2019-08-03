@@ -77,6 +77,12 @@ public class UserPO {
     @Column(name = "updated_by")
     private String updatedBy;
 
+    public static UserPO createQueryOfUserCode(String userCode) {
+        UserPO po = new UserPO();
+        po.setUserCode(userCode);
+        return po;
+    }
+
     /**
      * 获取id
      *
