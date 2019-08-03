@@ -2,7 +2,6 @@ package com.zzh.exception.handler;
 
 import com.zzh.exception.UnauthorizedException;
 import com.zzh.result.ApiResult;
-import org.apache.shiro.ShiroException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,13 +16,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
-    //捕捉Shiro的异常
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    @ExceptionHandler(ShiroException.class)
-    public ApiResult handle401(ShiroException e) {
-        return new ApiResult(HttpStatus.UNAUTHORIZED.value(), "无权限访问", null);
-    }
 
     //捕捉UnauthorizedException
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
