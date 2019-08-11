@@ -1,5 +1,6 @@
 package com.zzh.web.system;
 
+import com.zzh.ApiInfo;
 import com.zzh.api.IUserService;
 import com.zzh.web.vo.UserVO;
 import io.swagger.annotations.Api;
@@ -16,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: 2019/8/1
  */
 @RestController
-@Api(value = "用户服务")
+@Api(tags = ApiInfo.System.USER_SERVICE)
 public class UserController {
     @Autowired
     private IUserService iUserService;
 
-    @ApiOperation(value = "获取用户信息")
+    @ApiOperation(ApiInfo.System.User.GET_USER)
     @GetMapping("/user")
     public UserVO test(@RequestParam(name = "userCode") String userCode) {
         UserVO userVO = new UserVO();
