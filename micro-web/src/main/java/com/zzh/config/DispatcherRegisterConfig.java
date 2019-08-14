@@ -16,7 +16,7 @@ import javax.servlet.MultipartConfigElement;
 public class DispatcherRegisterConfig {
 
     @Bean
-    public ServletRegistrationBean diapatcherServletRegister(DispatcherServlet dispatcherServlet,
+    public ServletRegistrationBean dispatcherServletRegister(DispatcherServlet dispatcherServlet,
                                                              MultipartConfigElement multipartConfig) {
         ServletRegistrationBean registerBean = new ServletRegistrationBean(dispatcherServlet);
         registerBean.getUrlMappings().clear();
