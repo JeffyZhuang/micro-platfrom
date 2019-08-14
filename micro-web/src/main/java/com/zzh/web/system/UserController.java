@@ -24,6 +24,7 @@ public class UserController {
 
     @ApiOperation(ApiInfo.System.User.GET_USER)
     @GetMapping("/user")
+    //todo 350 1024 1038
     public UserVO test(@RequestParam(name = "userCode") String userCode) {
         UserVO userVO = new UserVO();
         BeanUtils.copyProperties(iUserService.getUserByUserCode(userCode), userVO);
