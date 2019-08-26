@@ -8,6 +8,7 @@
         <module>micro-service</module>
         <module>micro-web</module>
         <module>micro-common</module>
+        <module>micro-log</module>
     </modules>
 
     <parent>
@@ -30,6 +31,13 @@
         <druid.version>1.1.10</druid.version>
         <swagger.version>2.6.1</swagger.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
