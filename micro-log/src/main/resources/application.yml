@@ -1,3 +1,0 @@
-logging:
-  config: log4j2.xml
-  leveling: com.zzh.api

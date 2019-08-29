@@ -1,4 +1,4 @@
-package com.zzh;
+package com.zzh.log;
 
 import com.zzh.utils.CollectionUtil;
 import lombok.extern.slf4j.Slf4j;

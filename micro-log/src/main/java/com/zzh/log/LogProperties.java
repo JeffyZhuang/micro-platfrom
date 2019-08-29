@@ -1,4 +1,4 @@
-package com.zzh;
+package com.zzh.log;
 
 import com.google.common.collect.Lists;
 import lombok.Data;

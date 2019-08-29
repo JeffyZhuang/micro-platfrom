@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.zzh.LogAutoConfiguration
+com.zzh.log.LogAutoConfiguration
