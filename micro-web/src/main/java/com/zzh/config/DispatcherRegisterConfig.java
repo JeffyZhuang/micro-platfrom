@@ -21,7 +21,7 @@ public class DispatcherRegisterConfig {
         ServletRegistrationBean registerBean = new ServletRegistrationBean(dispatcherServlet);
         registerBean.getUrlMappings().clear();
         registerBean.setMultipartConfig(multipartConfig);
-        registerBean.addUrlMappings("/zzh/micro/springBoot/*","/*");
+        registerBean.addUrlMappings("/zzh/micro/springBoot/*");
         return registerBean;
     }
 

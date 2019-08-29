@@ -5,6 +5,7 @@ import com.zzh.api.IUserService;
 import com.zzh.web.vo.UserVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: 2019/8/1
  */
 @RestController
+@Slf4j
 @Api(tags = ApiInfo.System.USER_SERVICE)
 public class UserController {
     @Autowired

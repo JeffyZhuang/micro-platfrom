@@ -28,6 +28,12 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>com.zzh</groupId>
+            <artifactId>micro-log</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!--swagger start-->
         <dependency>
             <groupId>io.springfox</groupId>
