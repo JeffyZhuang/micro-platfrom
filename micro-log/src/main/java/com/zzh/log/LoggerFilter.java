@@ -38,15 +38,15 @@ public class LoggerFilter implements Filter {
                 HttpServletRequest httpServletRequest = (HttpServletRequest) request;
                 httpServletRequest.setCharacterEncoding("UTF-8");
                 String uri = httpServletRequest.getRequestURI();
-//                if (isIgnoreUri(uri)) {
-//                    filterChain.doFilter(request, response);
-//                    return;
-//                }
+                if (isIgnoreUri(uri)) {
+                    filterChain.doFilter(request, response);
+                    return;
+                }
                 filterChain.doFilter(request, response);
-                return;
                 //包装wrapper
-            } catch (Exception e) {
-
+            } catch (Throwable e) {
+                log.error("request error={}", e);
+                throw e;
             } finally {
                 MDC.clear();
             }

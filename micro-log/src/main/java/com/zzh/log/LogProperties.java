@@ -28,7 +28,7 @@ public class LogProperties {
     /**
      * 忽略的打印uri
      */
-    private List<String> ignoreUris;
+    private List<String> ignoreUris = Lists.newArrayList("login", "logout");
 
     /**
      * 网关传的traceId，没有默认随机生成
@@ -39,4 +39,5 @@ public class LogProperties {
      * 默认忽略打印的uri
      */
     private List<String> defaultIgnoreUris = Lists.newArrayList("swagger");
+
 }
