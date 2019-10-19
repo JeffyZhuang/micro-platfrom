@@ -17,7 +17,7 @@ import java.util.UUID;
 
 /**
  * @Author: zzh
- * @Description:
+ * @Description:Log 过滤器
  * @Date: 2019/8/27
  */
 @Slf4j
