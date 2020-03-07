@@ -11,7 +11,7 @@ CREATE TABLE `t_system_user` (
   `status` varchar(2) NOT NULL DEFAULT '0' COMMENT '是否激活',
   `disabled` varchar(2) NOT NULL DEFAULT '1' COMMENT '有效、失效',
   `created_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_time` TIMESTAMP COMMENT '更新时间',
+  `updated_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `created_by` varchar(64) COMMENT '创建人' ,
   `updated_by` varchar(64) COMMENT '更新人' ,
   PRIMARY KEY (`id`)
@@ -27,7 +27,7 @@ CREATE TABLE `t_system_role` (
   `intro` varchar(255) COMMENT '简介',
   `disabled` varchar(2) NOT NULL DEFAULT '1' COMMENT '有效、失效',
   `created_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_time` TIMESTAMP COMMENT '更新时间',
+  `updated_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `created_by` varchar(64) COMMENT '创建人' ,
   `updated_by` varchar(64) COMMENT '更新人' ,
   PRIMARY KEY (`id`)
@@ -46,7 +46,7 @@ CREATE TABLE `t_system_resources` (
   `order_seq` int(11) NOT NULL DEFAULT 0 COMMENT '排序',
   `disabled` varchar(2) NOT NULL DEFAULT '1' COMMENT '有效、失效',
   `created_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_time` TIMESTAMP COMMENT '更新时间',
+  `updated_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `created_by` varchar(64) COMMENT '创建人' ,
   `updated_by` varchar(64) COMMENT '更新人' ,
   PRIMARY KEY (`id`)
@@ -62,7 +62,7 @@ CREATE TABLE `t_system_permission` (
   `intro` varchar(255) COMMENT '简介',
   `disabled` varchar(2) NOT NULL DEFAULT '1' COMMENT '有效、失效',
   `created_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_time` TIMESTAMP COMMENT '更新时间',
+  `updated_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `created_by` varchar(64) COMMENT '创建人' ,
   `updated_by` varchar(64) COMMENT '更新人' ,
   PRIMARY KEY (`id`)
@@ -74,7 +74,7 @@ CREATE TABLE `t_system_user_role` (
   `user_code` varchar(64) NOT NULL COMMENT '用户code',
   `role_code` varchar(64) NOT NULL COMMENT '角色code',
   `created_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_time` TIMESTAMP COMMENT '更新时间',
+  `updated_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `created_by` varchar(64) COMMENT '创建人' ,
   `updated_by` varchar(64) COMMENT '更新人' ,
   PRIMARY KEY (`id`)
@@ -86,7 +86,7 @@ CREATE TABLE `t_system_role_resources` (
   `role_code` varchar(64) NOT NULL COMMENT '角色code',
   `resource_code` varchar(64) NOT NULL COMMENT '资源code',
   `created_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_time` TIMESTAMP COMMENT '更新时间',
+  `updated_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `created_by` varchar(64) COMMENT '创建人' ,
   `updated_by` varchar(64) COMMENT '更新人' ,
   PRIMARY KEY (`id`)
@@ -99,7 +99,7 @@ CREATE TABLE `t_system_resources_permission` (
   `resource_code` varchar(64) NOT NULL COMMENT '资源code',
   `permissiom_code` varchar(64) NOT NULL COMMENT '权限code',
   `created_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_time` TIMESTAMP COMMENT '更新时间',
+  `updated_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `created_by` varchar(64) COMMENT '创建人' ,
   `updated_by` varchar(64) COMMENT '更新人' ,
   PRIMARY KEY (`id`)
