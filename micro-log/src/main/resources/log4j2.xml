@@ -10,8 +10,10 @@
         <!-- %logger{36} 表示 Logger 名字最长36个字符 -->
         <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %X{traceId} %logger{36} - %msg%n"/>
         <!-- 定义日志存储的路径，不要配置相对路径 -->
-        <property name="FILE_PATH" value="micro-log/log"/>
-        <property name="FILE_NAME" value="micro-log"/>
+        <!--<property name="FILE_PATH" value="micro-log/log"/>-->
+        <!--<property name="FILE_NAME" value="micro-log"/>-->
+        <!--<Property name="LOG_HOME" value="D:/log/log_${main:0}" />-->
+        <property name="BASE_PATH">D://micro_logs</property>
     </Properties>
 
     <appenders>
@@ -24,13 +26,13 @@
         </console>
 
         <!--文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，适合临时测试用-->
-        <File name="Filelog" fileName="${FILE_PATH}/test.log" append="false">
+        <File name="Filelog" fileName="${BASE_PATH}/test.log" append="false">
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </File>
 
         <!-- 这个会打印出所有的info及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
         <RollingFile name="RollingFileInfo" fileName="${FILE_PATH}/info.log"
-                     filePattern="${FILE_PATH}/${FILE_NAME}-INFO-%d{yyyy-MM-dd}_%i.log.gz">
+                     filePattern="${BASE_PATH}-INFO-%d{yyyy-MM-dd}_%i.log.gz">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
             <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="${LOG_PATTERN}"/>
@@ -45,7 +47,7 @@
 
         <!-- 这个会打印出所有的warn及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
         <RollingFile name="RollingFileWarn" fileName="${FILE_PATH}/warn.log"
-                     filePattern="${FILE_PATH}/${FILE_NAME}-WARN-%d{yyyy-MM-dd}_%i.log.gz">
+                     filePattern="${BASE_PATH}-WARN-%d{yyyy-MM-dd}_%i.log.gz">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
             <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="${LOG_PATTERN}"/>
@@ -60,7 +62,7 @@
 
         <!-- 这个会打印出所有的error及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
         <RollingFile name="RollingFileError" fileName="${FILE_PATH}/error.log"
-                     filePattern="${FILE_PATH}/${FILE_NAME}-ERROR-%d{yyyy-MM-dd}_%i.log.gz">
+                     filePattern="${BASE_PATH}-ERROR-%d{yyyy-MM-dd}_%i.log.gz">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
             <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="${LOG_PATTERN}"/>
@@ -80,7 +82,7 @@
     <loggers>
 
         <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
-        <logger name="org.mybatis" level="info" additivity="false">
+        <logger name="org.mybatis" level="DEBUG" additivity="false">
             <AppenderRef ref="Console"/>
         </logger>
         <!--监控系统信息-->
