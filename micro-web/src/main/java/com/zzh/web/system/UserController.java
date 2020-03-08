@@ -28,6 +28,10 @@ public class UserController {
     @GetMapping("/user")
     public UserVO test(@RequestParam(name = "userCode") String userCode) {
         UserVO userVO = new UserVO();
+        log.info("this is a info");
+        log.warn("this is a warn");
+        log.debug("this is a debug");
+        log.error("this is a error");
         BeanUtils.copyProperties(iUserService.getUserByUserCode(userCode), userVO);
         return userVO;
     }

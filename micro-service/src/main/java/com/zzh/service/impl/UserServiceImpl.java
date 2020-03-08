@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @Date: 2019/8/1
  */
 @Service
-public class UserService implements IUserService {
+public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
 
