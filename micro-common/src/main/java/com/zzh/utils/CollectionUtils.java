@@ -9,7 +9,7 @@ import java.util.Objects;
  * @Author zzh
  * @Date 2019/8/3 13:10
  **/
-public class CollectionUtil {
+public class CollectionUtils {
     public static boolean isEmpty(Collection<?> collection) {
         return collection == null || collection.isEmpty();
     }

@@ -30,8 +30,21 @@ public class AssertUtils {
      * @author zzh
      **/
     public static void notNull(CharSequence text, String message) {
-        if (CollectionUtil.isEmpty(text)) {
+        if (CollectionUtils.isEmpty(text)) {
             throw new IllegalArgumentException(message);
+        }
+    }
+
+    /**
+     * @description: 对所有参数做空指针校验
+     * @author: zzh
+     * @date: 2020/3/19 14:07
+     * @return:
+     */
+    public static void notNull(Object... args) {
+        notNull(args, "the params must not be empty!");
+        for (int i = 0; i < args.length; i++) {
+            notNull(args[i], String.format("the params in index[%d] can not be empty", i));
         }
     }
 }

@@ -87,7 +87,7 @@ public class BeanUtils {
      * @author zzh
      **/
     public static <T> List<T> copyList(List sourceList, Class<T> targetClazz) {
-        if (CollectionUtil.isEmpty(sourceList)) {
+        if (CollectionUtils.isEmpty(sourceList)) {
             return Lists.newArrayList();
         }
         return JsonUtils.deserializeList(JsonUtils.serialize(sourceList), targetClazz);

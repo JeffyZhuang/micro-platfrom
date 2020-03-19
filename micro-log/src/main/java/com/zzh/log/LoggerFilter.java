@@ -1,6 +1,6 @@
 package com.zzh.log;
 
-import com.zzh.utils.CollectionUtil;
+import com.zzh.utils.CollectionUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 
@@ -54,18 +54,18 @@ public class LoggerFilter implements Filter {
     }
 
     private boolean isIgnoreUri(String uri) {
-        return isDefaultUri(uri) || (CollectionUtil.isNotEmpty(logProperties.getIgnoreUris()) && logProperties
+        return isDefaultUri(uri) || (CollectionUtils.isNotEmpty(logProperties.getIgnoreUris()) && logProperties
                 .getIgnoreUris().stream().anyMatch(uri::contains));
     }
 
     private boolean isDefaultUri(String uri) {
-        return CollectionUtil.isNotEmpty(logProperties.getDefaultIgnoreUris()) && logProperties.getDefaultIgnoreUris
+        return CollectionUtils.isNotEmpty(logProperties.getDefaultIgnoreUris()) && logProperties.getDefaultIgnoreUris
                 ().stream().anyMatch(uri::contains);
     }
 
     private String traceId(ServletRequest request) {
         String headerTraceId = ((HttpServletRequest) request).getHeader(logProperties.getHeaderTraceIdKey());
-        return CollectionUtil.isEmpty(headerTraceId) ? UUID.randomUUID().toString() : headerTraceId;
+        return CollectionUtils.isEmpty(headerTraceId) ? UUID.randomUUID().toString() : headerTraceId;
     }
 
     @Override
